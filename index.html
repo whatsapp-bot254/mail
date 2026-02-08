@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>sir bravin love heart</title>
+<style>
+    body {
+        margin: 0;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    canvas {
+        background: black;
+    }
+</style>
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="600"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+ctx.translate(canvas.width / 2, canvas.height / 2);
+ctx.strokeStyle = "purple";
+ctx.lineWidth = 1;
+ctx.shadowColor = "violet";
+ctx.shadowBlur = 10;
+
+function heartX(t) {
+    return 16 * Math.pow(Math.sin(t), 3);
+}
+
+function heartY(t) {
+    return -(13 * Math.cos(t)
+        - 5 * Math.cos(2 * t)
+        - 2 * Math.cos(3 * t)
+        - Math.cos(4 * t));
+}
+
+for (let j = 0; j < 40; j++) {
+    ctx.beginPath();
+    for (let i = 0; i <= 1000; i++) {
+        let t = i * 0.02;
+        let x = heartX(t) * 15 + j;
+        let y = heartY(t) * 15;
+        ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+}
+</script>
+
+</body>
+</html>
