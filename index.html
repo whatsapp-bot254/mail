@@ -2,78 +2,180 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mission for Kenya</title>
+<title>sir bravin zone</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-    body {
-        margin: 0;
-        background: radial-gradient(circle at top, #111, #000);
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Arial, sans-serif;
-        color: white;
-    }
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #0b0d13, #12131a);
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
 
-    .card {
-        width: 320px;
-        padding: 30px;
-        background: linear-gradient(145deg, #0a0a0a, #111);
-        border-radius: 20px;
-        box-shadow: 0 0 30px rgba(0,255,0,0.25);
-        text-align: center;
-    }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+}
 
-    .flag {
-        font-size: 40px;
-        margin-bottom: 10px;
-    }
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff3d3d;
+}
 
-    .leader {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        margin: 20px auto;
-        background: linear-gradient(135deg, #333, #666);
-        box-shadow: 0 0 20px rgba(255,255,255,0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 60px;
-    }
+.search {
+    background: #1c1f2a;
+    border-radius: 30px;
+    padding: 8px 16px;
+    color: #ccc;
+    border: none;
+    width: 180px;
+}
 
-    h1 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
+.hero {
+    padding: 20px;
+}
 
-    p {
-        font-size: 14px;
-        opacity: 0.8;
-    }
+.hero-card {
+    background: radial-gradient(circle at top, #1f2230, #12131a);
+    border-radius: 20px;
+    padding: 20px;
+}
 
-    .mission {
-        margin-top: 20px;
-        padding: 12px;
-        border-radius: 10px;
-        background: rgba(0,255,0,0.1);
-        border: 1px solid rgba(0,255,0,0.3);
-    }
+.hero-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.rating {
+    color: gold;
+    margin: 8px 0;
+}
+
+.actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.play {
+    background: #ff3d3d;
+    color: #fff;
+}
+
+.download {
+    background: #1f2230;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.section {
+    padding: 20px;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: #1c1f2a;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.thumb {
+    height: 180px;
+    background: linear-gradient(135deg, #333, #555);
+}
+
+.card h3 {
+    font-size: 14px;
+    margin: 10px 5px;
+}
+
+.card small {
+    color: #aaa;
+}
+
+.card .download {
+    margin: 10px;
+    width: calc(100% - 20px);
+}
 </style>
 </head>
+
 <body>
 
-<div class="card">
-    <div class="flag">🇰🇪</div>
-    <div class="leader">🧠</div>
-    <h1>Mission: Protect the Nation</h1>
-    <p>A leader stands firm against challenges, guided by unity, strength, and vision.</p>
+<header>
+    <div class="logo">MediaZone</div>
+    <input class="search" placeholder="Search music or video">
+</header>
 
-    <div class="mission">
-        Status: <strong>ACTIVE</strong><br>
-        Objective: <strong>Peace • Progress • Prosperity</strong>
+<div class="hero">
+    <div class="hero-card">
+        <div class="hero-title">Featured Media</div>
+        <div class="rating">⭐ 7.8</div>
+        <p>Download songs and videos from supported sources.</p>
+
+        <div class="actions">
+            <button class="btn play">▶ Play</button>
+            <button class="btn download">⬇ Download</button>
+        </div>
     </div>
 </div>
 
+<div class="section">
+    <h2>Popular Downloads</h2>
+
+    <div class="grid">
+        <div class="card">
+            <div class="thumb"></div>
+            <h3>Sample Audio</h3>
+            <small>MP3 • Free</small>
+            <button class="btn download">Download</button>
+        </div>
+
+        <div class="card">
+            <div class="thumb"></div>
+            <h3>Sample Video</h3>
+            <small>MP4 • Free</small>
+            <button class="btn download">Download</button>
+        </div>
+
+        <div class="card">
+            <div class="thumb"></div>
+            <h3>Instrumental Beat</h3>
+            <small>MP3 • Free</small>
+            <button class="btn download">Download</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// UI demo only
+document.querySelectorAll(".download").forEach(btn => {
+    btn.onclick = () => alert("Connect this button to your legal backend API");
+});
+</script>
+
 </body>
-</html>
+                </html>
