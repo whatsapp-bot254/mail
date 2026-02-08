@@ -2,57 +2,78 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>sir bravin love heart</title>
+<title>Mission for Kenya</title>
 <style>
     body {
         margin: 0;
-        background: black;
+        background: radial-gradient(circle at top, #111, #000);
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        font-family: Arial, sans-serif;
+        color: white;
     }
-    canvas {
-        background: black;
+
+    .card {
+        width: 320px;
+        padding: 30px;
+        background: linear-gradient(145deg, #0a0a0a, #111);
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,255,0,0.25);
+        text-align: center;
+    }
+
+    .flag {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .leader {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        margin: 20px auto;
+        background: linear-gradient(135deg, #333, #666);
+        box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+    .mission {
+        margin-top: 20px;
+        padding: 12px;
+        border-radius: 10px;
+        background: rgba(0,255,0,0.1);
+        border: 1px solid rgba(0,255,0,0.3);
     }
 </style>
 </head>
 <body>
 
-<canvas id="canvas" width="600" height="600"></canvas>
+<div class="card">
+    <div class="flag">🇰🇪</div>
+    <div class="leader">🧠</div>
+    <h1>Mission: Protect the Nation</h1>
+    <p>A leader stands firm against challenges, guided by unity, strength, and vision.</p>
 
-<script>
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-
-ctx.translate(canvas.width / 2, canvas.height / 2);
-ctx.strokeStyle = "purple";
-ctx.lineWidth = 1;
-ctx.shadowColor = "violet";
-ctx.shadowBlur = 10;
-
-function heartX(t) {
-    return 16 * Math.pow(Math.sin(t), 3);
-}
-
-function heartY(t) {
-    return -(13 * Math.cos(t)
-        - 5 * Math.cos(2 * t)
-        - 2 * Math.cos(3 * t)
-        - Math.cos(4 * t));
-}
-
-for (let j = 0; j < 40; j++) {
-    ctx.beginPath();
-    for (let i = 0; i <= 1000; i++) {
-        let t = i * 0.02;
-        let x = heartX(t) * 15 + j;
-        let y = heartY(t) * 15;
-        ctx.lineTo(x, y);
-    }
-    ctx.stroke();
-}
-</script>
+    <div class="mission">
+        Status: <strong>ACTIVE</strong><br>
+        Objective: <strong>Peace • Progress • Prosperity</strong>
+    </div>
+</div>
 
 </body>
 </html>
